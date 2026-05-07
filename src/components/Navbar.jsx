@@ -1,4 +1,3 @@
-import portfolioImage from "../assets/portfolio.jpeg";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router";
 export default function Navbar() {
@@ -7,7 +6,7 @@ export default function Navbar() {
       <div className={styles.navLeft}>
         <div className={styles.profilePic}>
           <Link to="/">
-            <img src={portfolioImage} alt="Mansur Iman" />
+            <img src="/portfolio.jpeg" alt="Mansur Iman" />
           </Link>
         </div>
         <span className={styles.brandName}>Mansur Iman</span>
