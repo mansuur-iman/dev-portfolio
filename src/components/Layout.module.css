@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 20px; /* Space above the floating navbar */
+}
+
+.mainContent {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px; /* Space between navbar and page content */
+  padding: 0 20px;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
