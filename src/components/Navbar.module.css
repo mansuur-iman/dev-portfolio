@@ -1,0 +1,84 @@
+.floatingNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Glassmorphism using global variables */
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Fluid padding: smaller on mobile, larger on desktop */
+  padding: 6px clamp(12px, 3vw, 24px) 6px 6px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+  /* Layout */
+  width: 92%;
+  max-width: 450px;
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  margin: 0 auto 12px auto;
+  transition: all 0.3s ease;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  /* Fluid gap */
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.profilePic {
+  /* Slightly smaller profile pic for a cleaner mobile look */
+  width: clamp(36px, 10vw, 44px);
+  height: clamp(36px, 10vw, 44px);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  flex-shrink: 0; /* Prevents pic from squishing */
+}
+
+.brandName {
+  font-weight: 500;
+  color: var(--text-main);
+  /* Fluid font size */
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  white-space: nowrap;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  /* Reduced gap on mobile so links don't wrap */
+  gap: clamp(12px, 4vw, 25px);
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navLinks a:hover {
+  color: var(--text-main);
+}
+
+/* MOBILE SPECIFIC TWEAKS */
+@media (max-width: 400px) {
+  .floatingNav {
+    /* Slightly more width on very small devices */
+    width: 95%;
+    top: 12px;
+  }
+
+  /* Hide the brand name if it gets too tight, 
+     keeping only the logo and links like some modern UIs */
+  /* .brandName { display: none; } */
+}
