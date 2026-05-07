@@ -1,16 +1,70 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React and React Router — showcasing backend-focused projects, technical writing, and system design thinking.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React** — component-based UI
+- **React Router** — client-side routing
+- **CSS Modules** — scoped, co-located styles
+- **Vite** — dev server and bundler
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Route       | Description                                         |
+| ----------- | --------------------------------------------------- |
+| `/`         | Home — intro, skills, design process, selected work |
+| `/projects` | Full case studies for each project                  |
+| `/notes`    | Technical writing — things learned while building   |
+| `/about`    | Background, approach, and contact                   |
 
-## Expanding the ESLint configuration
+## Projects Featured
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **FileCloud** — File and folder management system with shareable links, built with Node.js, Express, Prisma, and PostgreSQL
+- **MembersOnly** — Role-based messaging app with session authentication and server-side rendering via EJS
+- **Blog** — Full-stack blogging platform with CRUD and user authentication
+- **Where's Waldo** — Browser-based game with coordinate detection, validation logic, and a leaderboard
+
+## Structure
+
+```
+src/
+├── assets/          # Images and static files
+├── components/      # Shared components (NoteCard, Nav)
+├── data/            # Notes data
+├── pages/           # Route-level pages
+│   ├── Home.jsx
+│   ├── Projects.jsx
+│   ├── Notes.jsx
+│   ├── NoteDetail.jsx
+│   └── About.jsx
+└── projects/        # Individual project case studies
+    ├── FileCloud.jsx
+    ├── MembersOnly.jsx
+    ├── Blog.jsx
+    └── Waldo.jsx
+```
+
+## Design System
+
+Consistent design language across all pages:
+
+- **Serif headings** — Lora for titles and body prose
+- **Mono labels** — DM Mono for eyebrows, dates, tags, and metadata
+- **Accent color** — `#10b981` (emerald green) for tags, hover states, and list markers
+- **CSS variables** — `--text-main`, `--text-muted`, `--border-color`, `--bg-subtle` — all auto-adapt to light and dark mode
+
+## Running Locally
+
+```bash
+git clone https://github.com/mansuur-iman/dev-portfolio
+cd dev-portfolio
+npm install
+npm run dev
+```
+
+## Contact
+
+- **Email** — mansuriman18@gmail.com
+- **LinkedIn** — [mansur-iman-550588370](https://www.linkedin.com/in/mansur-iman-550588370/)
+- **X** — [@mansuur_iman](https://x.com/mansuur_iman)
