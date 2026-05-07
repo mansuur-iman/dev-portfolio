@@ -5,7 +5,6 @@ import styles from "./ProjectDetail.module.css";
 export default function Blog() {
   return (
     <div className={styles.container}>
-      {/* HERO: Using the Split Grid Layout */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.badge}>CRUD & Architecture Case Study</div>
@@ -33,7 +32,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* OBJECTIVE */}
       <section className={styles.section}>
         <h2>Objective</h2>
         <p>
@@ -44,7 +42,6 @@ export default function Blog() {
         </p>
       </section>
 
-      {/* SYSTEM DESIGN & FLOW */}
       <section className={styles.section}>
         <h2>System Flow</h2>
         <div className={styles.flowDiagram}>
@@ -64,7 +61,6 @@ export default function Blog() {
         </ul>
       </section>
 
-      {/* DATABASE */}
       <section className={styles.section}>
         <h2>Database Design</h2>
         <div className={styles.schemaContainer}>
@@ -81,7 +77,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* API */}
       <section className={styles.section}>
         <h2>API Design</h2>
         <pre className={styles.code}>
@@ -92,7 +87,6 @@ DELETE /posts/:id   // Private: Destroy (Owner only)`}
         </pre>
       </section>
 
-      {/* SECURITY */}
       <section className={styles.section}>
         <h2>Security Model</h2>
         <p>
@@ -103,7 +97,6 @@ DELETE /posts/:id   // Private: Destroy (Owner only)`}
         </p>
       </section>
 
-      {/* LINKS */}
       <section className={styles.links}>
         <a
           href="https://github.com/mansuur-iman/blog-api"

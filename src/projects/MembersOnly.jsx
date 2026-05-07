@@ -5,7 +5,6 @@ import styles from "./ProjectDetail.module.css";
 export default function MembersOnly() {
   return (
     <div className={styles.container}>
-      {/* HERO: Following the split-grid style from FileCloud */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.badge}>Security & Auth Case Study</div>
@@ -35,7 +34,6 @@ export default function MembersOnly() {
         </div>
       </section>
 
-      {/* OBJECTIVE */}
       <section className={styles.section}>
         <h2>Objective</h2>
         <p>
@@ -45,7 +43,6 @@ export default function MembersOnly() {
         </p>
       </section>
 
-      {/* SYSTEM FLOW */}
       <section className={styles.section}>
         <h2>System Flow</h2>
         <div className={styles.flowDiagram}>
@@ -67,7 +64,6 @@ export default function MembersOnly() {
         </ul>
       </section>
 
-      {/* DATABASE */}
       <section className={styles.section}>
         <h2>Database Design</h2>
         <div className={styles.schemaContainer}>
@@ -79,7 +75,6 @@ export default function MembersOnly() {
         </div>
       </section>
 
-      {/* API & SECURITY (Combined for technical flow) */}
       <section className={styles.section}>
         <h2>Security Model</h2>
         <pre className={styles.code}>
@@ -97,7 +92,6 @@ function isAdmin(req, res, next) {
         </p>
       </section>
 
-      {/* LINKS */}
       <section className={styles.links}>
         <a
           href="https://github.com/mansuur-iman/Members-only"

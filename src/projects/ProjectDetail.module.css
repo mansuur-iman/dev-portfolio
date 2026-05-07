@@ -2,7 +2,6 @@
   color: var(--text-main);
 }
 
-/* Hero */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -60,7 +59,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Image */
 .imageContainer {
   position: relative;
   perspective: 1000px;
@@ -79,7 +77,6 @@
   transform: rotateY(0deg) rotateX(0deg);
 }
 
-/* Sections */
 .section {
   margin-bottom: 36px;
   border-top: 1px solid var(--border-color);
@@ -127,7 +124,6 @@
   font-weight: 700;
 }
 
-/* Code block */
 .code {
   background: #0d1117;
   color: #c9d1d9;
@@ -156,7 +152,6 @@
     28px 0 0 #28c840;
 }
 
-/* Schema image */
 .schema {
   width: 100%;
   border-radius: 8px;
@@ -165,7 +160,6 @@
   display: block;
 }
 
-/* Links */
 .links {
   display: flex;
   gap: 24px;
@@ -193,7 +187,6 @@
   color: var(--text-main);
 }
 
-/* Dark mode image inversion */
 @media (prefers-color-scheme: dark) {
   .schema,
   .mainImage {
@@ -202,7 +195,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 720px) {
   .hero {
     grid-template-columns: 1fr;

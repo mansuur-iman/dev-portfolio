@@ -1,5 +1,4 @@
 :root {
-  /* Subtle light theme colors */
   --bg-color: #ffffff;
   --bg-subtle: #f9f9f9;
   --text-main: #1a1a1a;
@@ -33,7 +32,6 @@ body {
     color 0.3s ease;
 }
 
-/* Ensure images don't look too harsh in dark mode */
 img {
   max-width: 100%;
   height: auto;

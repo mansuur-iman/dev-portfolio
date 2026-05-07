@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding-top: 20px; /* Space above the floating navbar */
+  padding-top: 20px;
 }
 
 .mainContent {
   width: 100%;
   max-width: 800px;
-  margin-top: 20px; /* Space between navbar and page content */
+  margin-top: 20px;
   padding: 0 20px;
   animation: fadeIn 0.8s ease-out forwards;
 }

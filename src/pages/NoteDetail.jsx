@@ -23,7 +23,6 @@ function renderContent(content) {
   const parts = content.split(/(```[\s\S]*?```)/g);
 
   return parts.flatMap((part, i) => {
-    // Fenced code block
     if (part.startsWith("```")) {
       const code = part.replace(/^```[a-z]*\n?/, "").replace(/```$/, "");
       return (
@@ -58,7 +57,6 @@ function renderContent(content) {
     const flushTable = () => {
       if (tableBuffer.length === 0) return;
 
-      // tableBuffer[0] = header row, tableBuffer[1] = separator, tableBuffer[2+] = body rows
       const [headerRow, , ...bodyRows] = tableBuffer;
 
       const parseRow = (row) =>
@@ -104,14 +102,12 @@ function renderContent(content) {
     };
 
     lines.forEach((line, j) => {
-      // Table row detection
       if (line.trim().startsWith("|")) {
         flushList();
         tableBuffer.push(line.trim());
         return;
       }
 
-      // Flush table when we leave table lines
       if (tableBuffer.length > 0) flushTable();
 
       if (line.startsWith("## ")) {

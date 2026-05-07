@@ -5,7 +5,6 @@ import styles from "./ProjectDetail.module.css";
 export default function FileCloud() {
   return (
     <div className={styles.container}>
-      {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.badge}>Backend Case Study</div>
@@ -36,7 +35,6 @@ export default function FileCloud() {
         </div>
       </section>
 
-      {/* OBJECTIVE */}
       <section className={styles.section}>
         <h2>Objective</h2>
         <p>
@@ -45,7 +43,6 @@ export default function FileCloud() {
         </p>
       </section>
 
-      {/* SYSTEM DESIGN */}
       <section className={styles.section}>
         <h2>System Design</h2>
 
@@ -63,7 +60,6 @@ export default function FileCloud() {
         </ul>
       </section>
 
-      {/* DATABASE */}
       <section className={styles.section}>
         <h2>Database Design</h2>
 
@@ -82,7 +78,6 @@ export default function FileCloud() {
         </p>
       </section>
 
-      {/* API */}
       <section className={styles.section}>
         <h2>API Design</h2>
 
@@ -99,7 +94,6 @@ GET /share/:id`}
         </p>
       </section>
 
-      {/* SECURITY */}
       <section className={styles.section}>
         <h2>Security Model</h2>
 
@@ -116,7 +110,6 @@ GET /share/:id`}
         </p>
       </section>
 
-      {/* CHALLENGE */}
       <section className={styles.section}>
         <h2>Key Challenge</h2>
 
@@ -127,7 +120,6 @@ GET /share/:id`}
         </p>
       </section>
 
-      {/* LINKS */}
       <section className={styles.links}>
         <a href="https://github.com/mansuur-iman/file_uploader" target="_blank">
           Source Code ↗

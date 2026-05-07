@@ -5,7 +5,6 @@
   color: var(--text-main);
 }
 
-/* Intro block */
 .intro {
   margin-bottom: 56px;
 }
@@ -38,7 +37,6 @@
   margin: 0 0 16px;
 }
 
-/* Sections */
 .section {
   padding-top: 28px;
   margin-bottom: 40px;
@@ -63,7 +61,6 @@
   margin: 0 0 14px;
 }
 
-/* List */
 .list {
   list-style: none;
   padding: 0;
@@ -91,7 +88,6 @@
   font-weight: 700;
 }
 
-/* Contact rows — same pattern as NoteCard */
 .contactLinks {
   display: flex;
   flex-direction: column;

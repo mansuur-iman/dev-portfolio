@@ -5,7 +5,6 @@ import styles from "./ProjectDetail.module.css";
 export default function Waldo() {
   return (
     <div className={styles.container}>
-      {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.badge}>Game Logic & Validation Case Study</div>
@@ -35,7 +34,6 @@ export default function Waldo() {
         </div>
       </section>
 
-      {/* OBJECTIVE */}
       <section className={styles.section}>
         <h2>Objective</h2>
         <p>
@@ -45,7 +43,6 @@ export default function Waldo() {
         </p>
       </section>
 
-      {/* SYSTEM FLOW */}
       <section className={styles.section}>
         <h2>System Flow</h2>
 
@@ -66,7 +63,6 @@ export default function Waldo() {
         </p>
       </section>
 
-      {/* PROGRESSION SYSTEM */}
       <section className={styles.section}>
         <h2>Progression System</h2>
 
@@ -83,7 +79,6 @@ export default function Waldo() {
         </p>
       </section>
 
-      {/* DATA MODEL */}
       <section className={styles.section}>
         <h2>Data Model</h2>
 
@@ -108,7 +103,6 @@ export default function Waldo() {
         </p>
       </section>
 
-      {/* API */}
       <section className={styles.section}>
         <h2>API Design</h2>
 
@@ -126,7 +120,6 @@ GET /leaderboard/:fieldId`}
         </p>
       </section>
 
-      {/* VALIDATION & SECURITY */}
       <section className={styles.section}>
         <h2>Validation & Integrity</h2>
 
@@ -143,7 +136,6 @@ GET /leaderboard/:fieldId`}
         </p>
       </section>
 
-      {/* CHALLENGE */}
       <section className={styles.section}>
         <h2>Key Challenge</h2>
 
@@ -155,7 +147,6 @@ GET /leaderboard/:fieldId`}
         </p>
       </section>
 
-      {/* LINKS */}
       <section className={styles.links}>
         <a
           href="https://github.com/mansuur-iman/wheres-waldo-fullstack"

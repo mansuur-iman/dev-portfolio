@@ -4,7 +4,6 @@
   padding: 40px 28px clamp(80px, 12vh, 140px);
 }
 
-/* Intro */
 .intro {
   margin-bottom: 64px;
 }
@@ -37,7 +36,6 @@
   margin: 0 0 14px;
 }
 
-/* Sections */
 .section {
   padding-top: 28px;
   margin-bottom: 56px;
@@ -62,7 +60,6 @@
   margin: 0 0 24px;
 }
 
-/* List */
 .list {
   list-style: none;
   padding: 0;
@@ -90,7 +87,6 @@
   font-weight: 700;
 }
 
-/* System image */
 .systemImage {
   margin: 24px 0;
   border-radius: 10px;
@@ -104,7 +100,6 @@
   display: block;
 }
 
-/* Steps */
 .steps {
   display: flex;
   flex-direction: column;
@@ -146,7 +141,6 @@
   line-height: 1.55;
 }
 
-/* Projects */
 .projectsGrid {
   display: flex;
   flex-direction: column;
@@ -191,7 +185,6 @@
   margin: 0;
 }
 
-/* CTA link */
 .ctaLink {
   display: inline-block;
   font-family: var(--font-mono, monospace);
@@ -209,7 +202,6 @@
   opacity: 0.7;
 }
 
-/* Dark mode images */
 @media (prefers-color-scheme: dark) {
   .projectImageWrap img,
   .systemImage img {
