@@ -1,0 +1,154 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 28px clamp(80px, 12vh, 140px);
+  color: var(--text-main);
+}
+
+/* Intro block */
+.intro {
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #10b981;
+  margin: 0 0 14px;
+}
+
+.title {
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin: 0 0 28px;
+}
+
+.lead {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+/* Sections */
+.section {
+  padding-top: 28px;
+  margin-bottom: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+.sectionLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.section p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin: 0 0 14px;
+}
+
+/* List */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.list li {
+  position: relative;
+  padding: 12px 0 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.list li:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Contact rows — same pattern as NoteCard */
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contactRow:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.contactLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.contactValue {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  flex: 1;
+  transition: color 0.15s ease;
+}
+
+.contactArrow {
+  font-size: 0.9rem;
+  color: var(--border-color);
+  flex-shrink: 0;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.contactRow:hover .contactValue {
+  color: #10b981;
+}
+
+.contactRow:hover .contactArrow {
+  color: #10b981;
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 24px 20px 60px;
+  }
+}
