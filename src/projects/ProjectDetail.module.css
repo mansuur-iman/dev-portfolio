@@ -1,0 +1,225 @@
+.container {
+  color: var(--text-main);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 0 0 48px;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.heroContent h1 {
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--text-main);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techBadge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Image */
+.imageContainer {
+  position: relative;
+  perspective: 1000px;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  transform: rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.imageContainer:hover .mainImage {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 36px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 28px;
+}
+
+.section h2 {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.section p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin: 0 0 12px;
+}
+
+.section ul {
+  margin: 0 0 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.section li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Code block */
+.code {
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  line-height: 1.75;
+  padding: 36px 24px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  margin: 20px 0;
+  position: relative;
+}
+
+.code::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow:
+    14px 0 0 #febc2e,
+    28px 0 0 #28c840;
+}
+
+/* Schema image */
+.schema {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin: 20px 0;
+  display: block;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-color);
+}
+
+.links a {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.links a:last-child {
+  color: #10b981;
+}
+
+.links a:hover {
+  color: var(--text-main);
+}
+
+/* Dark mode image inversion */
+@media (prefers-color-scheme: dark) {
+  .schema,
+  .mainImage {
+    filter: invert(0.9) hue-rotate(180deg);
+    opacity: 0.85;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 0 0 36px;
+  }
+
+  .mainImage {
+    transform: none;
+  }
+
+  .imageContainer:hover .mainImage {
+    transform: none;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

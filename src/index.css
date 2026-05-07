@@ -1,0 +1,47 @@
+:root {
+  /* Subtle light theme colors */
+  --bg-color: #ffffff;
+  --bg-subtle: #f9f9f9;
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --border-color: #ececec;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000000;
+    --bg-subtle: #111111;
+    --text-main: #eeeeee;
+    --text-muted: #a0a0a0;
+    --border-color: #222222;
+    --nav-bg: rgba(0, 0, 0, 0.8);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Ensure images don't look too harsh in dark mode */
+img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    opacity: 0.9;
+  }
+}
