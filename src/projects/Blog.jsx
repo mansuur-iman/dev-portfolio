@@ -105,7 +105,11 @@ DELETE /posts/:id   // Private: Destroy (Owner only)`}
         >
           Source Code ↗
         </a>
-        <a href="#" target="_blank" rel="noreferrer">
+        <a
+          href="https://blog-reader-five.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Live Demo →
         </a>
       </section>
