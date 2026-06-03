@@ -78,10 +78,6 @@ export default function Projects() {
   return (
     <main className={styles.container}>
       <p className={styles.eyebrow}>Work</p>
-      <h1 className={styles.pageTitle}>Projects</h1>
-      <p className={styles.subtitle}>
-        Things I built, shipped, and learned from.
-      </p>
 
       <div className={styles.projectList}>
         {projects.map((project) => (

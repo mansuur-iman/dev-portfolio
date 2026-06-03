@@ -66,9 +66,9 @@
   color: var(--text-main);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   .floatingNav {
-    width: 95%;
-    top: 12px;
+    width: 75%;
+    top: 8px;
   }
 }

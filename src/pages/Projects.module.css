@@ -1,36 +1,18 @@
 .container {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 80px 24px clamp(80px, 12vh, 140px);
+  padding: 40px 28px clamp(80px, 12vh, 140px);
   background-color: var(--bg-color);
 }
 
 .eyebrow {
   font-family: var(--font-mono, monospace);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin: 0 0 12px;
-}
-
-.pageTitle {
-  font-family: "Lora", Georgia, serif;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--text-main, #111827);
-  margin: 0 0 16px;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted, #4b5563);
-  margin: 0 0 64px;
-  line-height: 1.6;
-  max-width: 540px;
+  letter-spacing: 0.1em;
+  color: var(--accent); /* Replaced green with your global variable */
+  margin: 0 0 24px;
 }
 
 .projectList {
@@ -135,15 +117,26 @@
   max-width: 180px; /* Keeps buttons from becoming awkwardly wide on desktop */
 }
 
+/* Replaced hardcoded black with variable fallback configuration */
 .btnPrimary {
   background-color: var(--text-main, #111827);
   color: var(--bg-color, #ffffff);
   border: 1px solid transparent;
 }
 
+/* Dynamic CSS micro-interaction animation targeting the nested arrow text */
+.btnPrimary span {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
 .btnPrimary:hover {
   opacity: 0.95;
   transform: translateY(-1px);
+}
+
+.btnPrimary:hover span {
+  transform: translateX(3px); /* Subtle shift forward on mouse hover */
 }
 
 .btnSecondary {
@@ -246,9 +239,6 @@
     padding: 48px 20px 80px;
   }
 
-  .subtitle {
-    margin-bottom: 40px;
-  }
   .ctaRow {
     gap: 8px;
   }

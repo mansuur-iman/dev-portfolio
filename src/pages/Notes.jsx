@@ -8,10 +8,7 @@ export default function Notes() {
   return (
     <main className={styles.container}>
       <p className={styles.eyebrow}>Writing</p>
-      <h1 className={styles.pageTitle}>Notes</h1>
-      <p className={styles.subtitle}>
-        Things I learned, debugged, or thought about while building.
-      </p>
+
       <p className={styles.count}>{sorted.length} notes</p>
       <div className={styles.noteList}>
         {sorted.map((note) => (
