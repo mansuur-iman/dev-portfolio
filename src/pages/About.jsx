@@ -1,105 +1,211 @@
 import styles from "./About.module.css";
 
 export default function About() {
+  const skills = [
+    {
+      icon: "ti-server",
+      title: "Backend",
+      desc: "Node.js, Express, REST API design, auth, middleware",
+    },
+    {
+      icon: "ti-database",
+      title: "Data layer",
+      desc: "PostgreSQL, Prisma ORM, relational modeling, migrations",
+    },
+    {
+      icon: "ti-layout-2",
+      title: "Frontend",
+      desc: "React, JavaScript, HTML/CSS, clean UI patterns",
+    },
+    {
+      icon: "ti-shield-lock",
+      title: "Auth & security",
+      desc: "JWT, sessions, access control, input validation",
+    },
+  ];
+
+  const stack = [
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Prisma",
+    "React",
+    "REST APIs",
+    "Git",
+    "JavaScript",
+    "typescript",
+  ];
+
+  const contacts = [
+    {
+      icon: "ti-mail",
+      label: "Email",
+      value: "mansuriman18@gmail.com",
+      href: "mailto:mansuriman18@gmail.com",
+    },
+    {
+      icon: "ti-brand-linkedin",
+      label: "LinkedIn",
+      value: "mansur-iman-550588370",
+      href: "https://www.linkedin.com/in/mansur-iman-550588370/",
+    },
+    {
+      icon: "ti-brand-x",
+      label: "X / Twitter",
+      value: "@mansuur_iman",
+      href: "https://x.com/mansuur_iman",
+    },
+  ];
+
   return (
     <div className={styles.container}>
       <section className={styles.intro}>
         <p className={styles.eyebrow}>About</p>
         <h1 className={styles.title}>
-          Builder, problem-solver, backend-focused.
+          Fullstack engineer.
+          <br />
+          Backend-first thinker.
         </h1>
         <p className={styles.lead}>
-          I've always been curious about how systems work — not just what users
-          see, but what happens underneath. That curiosity led me into web
-          development, where I focus on building backend systems, APIs, and
-          data-driven applications.
+          I build software end to end — from database schema and API design to
+          the interfaces users interact with. My foundation is backend: I care
+          deeply about how data moves, how systems are structured, and how logic
+          is organized. But I'm equally comfortable on the frontend when the
+          work calls for it.
         </p>
         <p className={styles.lead}>
-          I'm currently developing my skills as a backend developer, working
-          with Node.js, Express, and PostgreSQL. I enjoy designing how data
-          flows through an application, structuring logic, and building systems
-          that are clear, reliable, and scalable.
+          I'm early in my career and intentionally building depth over breadth —
+          writing production-grade Node.js, working with real databases, and
+          shipping projects that go beyond tutorials.
         </p>
       </section>
+
+      <hr className={styles.divider} />
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionLabel}>What I work with</h2>
+        <div className={styles.skillsGrid}>
+          {skills.map((s) => (
+            <div key={s.title} className={styles.skillCard}>
+              <i
+                className={`ti ${s.icon} ${styles.skillIcon}`}
+                aria-hidden="true"
+              />
+              <p className={styles.skillTitle}>{s.title}</p>
+              <p className={styles.skillDesc}>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.stackRow}>
+          {stack.map((t) => (
+            <span key={t} className={styles.pill}>
+              {t}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <hr className={styles.divider} />
 
       <section className={styles.section}>
         <h2 className={styles.sectionLabel}>How I work</h2>
-        <p>
-          I approach problems from the backend first — understanding the data,
-          the relationships, and how different parts of the system communicate
-          before writing code.
+        <p className={styles.body}>
+          I start from the data. Before writing a single line of code, I think
+          about what the system needs to store, how entities relate to each
+          other, and what the API contract between layers should look like. That
+          approach keeps the codebase honest as complexity grows.
         </p>
-        <p>
-          I break down features into smaller pieces, design the flow, and then
-          implement them step by step. I focus on writing clean, structured
-          logic and making sure things work as expected before adding
-          complexity.
+        <p className={styles.body}>
+          I break features into small, testable pieces and iterate — not because
+          it's a process I follow, but because I've learned it's the only way to
+          catch edge cases early. I'd rather spend twenty minutes designing a
+          clean interface than two hours debugging a tightly coupled one.
         </p>
-        <p>
-          I'm comfortable debugging, iterating, and improving systems over time
-          as requirements evolve.
+        <p className={styles.body}>
+          I'm also comfortable on the frontend. I build the UI myself on
+          personal projects, which means I've had to think through the full
+          picture — how the API response maps to state, how a form's UX reflects
+          the backend's validation logic, and where the seams between layers
+          should be.
         </p>
       </section>
+
+      <hr className={styles.divider} />
 
       <section className={styles.section}>
         <h2 className={styles.sectionLabel}>Background</h2>
-        <p>
-          I started learning web development with a focus on fundamentals —
-          HTML, JavaScript, and how the web actually works. Over time, I moved
-          into backend development, working on projects that involve
-          authentication, databases, file handling, and application logic.
+        <p className={styles.body}>
+          I started with fundamentals — HTML, JavaScript, how HTTP actually
+          works. I didn't rush into frameworks; I wanted to understand what they
+          were solving first. That curiosity pulled me toward backend
+          development, where the interesting problems live: designing databases,
+          modeling relationships, handling state that persists.
         </p>
-        <p>Instead of jumping between tools, I've focused on understanding:</p>
+        <p className={styles.body}>
+          I've focused on building real understanding in a small number of areas
+          rather than surface-level exposure to many:
+        </p>
         <ul className={styles.list}>
-          <li>How APIs are designed</li>
-          <li>How databases are structured</li>
-          <li>How authentication and security work</li>
-          <li>How to organize backend code for clarity and scalability</li>
+          <li>
+            Designing APIs that are consistent, versioned, and easy to consume
+          </li>
+          <li>
+            Modeling relational data with constraints that actually enforce
+            business logic
+          </li>
+          <li>
+            Implementing auth flows from scratch — not just wiring up a library
+          </li>
+          <li>
+            Structuring backend code so it stays readable as the project grows
+          </li>
+          <li>
+            Building fullstack features where I own the entire vertical slice
+          </li>
         </ul>
       </section>
 
+      <hr className={styles.divider} />
+
       <section className={styles.section}>
-        <h2 className={styles.sectionLabel}>Outside of coding</h2>
-        <p>
-          Outside of coding, I focus on improving my physical health, learning
-          consistently, and building discipline. I'm interested in long-term
-          growth — both technically and personally.
+        <h2 className={styles.sectionLabel}>Outside of code</h2>
+        <p className={styles.body}>
+          I'm deliberate about how I spend my time. I train consistently, focus
+          on long-term health, and try to improve at things I care about with
+          the same attention I bring to engineering. I'm interested in
+          distributed systems and AI integration as the next technical areas to
+          build depth in.
         </p>
       </section>
 
+      <hr className={styles.divider} />
+
       <section className={styles.section}>
         <h2 className={styles.sectionLabel}>Get in touch</h2>
-        <p>
-          I'm currently open to backend internships and junior developer roles.
-          If you're looking for someone focused on backend development, systems,
-          and building real-world applications, feel free to reach out.
+        <p className={styles.body}>
+          I'm open to backend, fullstack, and software engineering internships
+          and junior roles. If you're building something real and need someone
+          who thinks carefully about systems — let's talk.
         </p>
-        <div className={styles.contactLinks}>
-          <a href="mailto:mansuriman18@gmail.com" className={styles.contactRow}>
-            <span className={styles.contactLabel}>Email</span>
-            <span className={styles.contactValue}>mansuriman18@gmail.com</span>
-            <span className={styles.contactArrow}>→</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mansur-iman-550588370/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.contactRow}
-          >
-            <span className={styles.contactLabel}>LinkedIn</span>
-            <span className={styles.contactValue}>mansur-iman-550588370</span>
-            <span className={styles.contactArrow}>→</span>
-          </a>
-          <a
-            href="https://x.com/mansuur_iman"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.contactRow}
-          >
-            <span className={styles.contactLabel}>X / Twitter</span>
-            <span className={styles.contactValue}>@mansuur_iman</span>
-            <span className={styles.contactArrow}>→</span>
-          </a>
+        <div className={styles.contactList}>
+          {contacts.map((c) => (
+            <a
+              key={c.label}
+              href={c.href}
+              className={styles.contactRow}
+              target={c.href.startsWith("http") ? "_blank" : undefined}
+              rel={
+                c.href.startsWith("http") ? "noopener noreferrer" : undefined
+              }
+            >
+              <div className={styles.contactIcon}>
+                <i className={`ti ${c.icon}`} aria-hidden="true" />
+              </div>
+              <span className={styles.contactLabel}>{c.label}</span>
+              <span className={styles.contactValue}>{c.value}</span>
+              <span className={styles.contactArrow}>→</span>
+            </a>
+          ))}
         </div>
       </section>
     </div>
