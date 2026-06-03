@@ -39,8 +39,9 @@
   transition: color 0.15s ease;
 }
 
+/* Card hover title color scales with global theme accent */
 .card:hover .title {
-  color: #10b981;
+  color: var(--accent);
 }
 
 .description {
@@ -65,11 +66,15 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.07);
+  color: var(--accent); /* Replaced green */
+  background: color-mix(
+    in srgb,
+    var(--accent) 7%,
+    transparent
+  ); /* Replaced rgba green */
   padding: 2px 8px;
   border-radius: 3px;
-  border: 1px solid rgba(16, 185, 129, 0.15);
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent); /* Replaced rgba green */
 }
 
 .arrow {
@@ -81,8 +86,9 @@
     color 0.2s ease;
 }
 
+/* Interaction colors map to accent layer rules */
 .card:hover .arrow {
-  color: #10b981;
+  color: var(--accent);
   transform: translateX(3px);
 }
 
