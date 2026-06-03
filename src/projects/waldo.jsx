@@ -1,168 +1,235 @@
+import { useNavigate } from "react-router";
 import waldoImage from "../assets/waldo.png";
 import schema from "../assets/waldo-schema.png";
 import styles from "./ProjectDetail.module.css";
 
 export default function Waldo() {
+  const navigate = useNavigate();
+
+  const features = [
+    {
+      icon: "ti-crosshair",
+      title: "Backend verification",
+      desc: "All click coordinates are validated on the server; target locations are never exposed to the client",
+    },
+    {
+      icon: "ti-trending-up",
+      title: "State-driven progression",
+      desc: "Sequential stage advancement is completely managed by backend state, preventing game-skipping exploits",
+    },
+    {
+      icon: "ti-scale-percentage",
+      title: "Coordinate normalization",
+      desc: "Translates click positions relative to image dimensions to guarantee accurate validation across all screen resolutions",
+    },
+    {
+      icon: "ti-trophy",
+      title: "Secure leaderboards",
+      desc: "Completion times are calculated server-side upon completion to ensure high-integrity scoreboard standings",
+    },
+  ];
+
+  const flowSteps = [
+    { icon: "ti-mouse", label: "Client click" },
+    { icon: "ti-transform", label: "Scale normalization" },
+    { icon: "ti-vector-triangle", label: "Coordinate check" },
+    { icon: "ti-refresh", label: "State progression" },
+    { icon: "ti-database", label: "PostgreSQL" },
+  ];
+
+  const lessons = [
+    "Treating the backend as the sole source of truth is mandatory for competitive integrity in web-based gaming applications",
+    "Responsive canvas and coordinate checking require percentage-based layout tracking rather than raw viewport pixels",
+    "Session-based state machines prevent client manipulation of time-stamps or artificial game completion signals",
+    "Normalizing mathematical properties early avoids heavy layout bugs when rendering assets dynamically across device viewports",
+  ];
+
   return (
     <div className={styles.container}>
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <div className={styles.badge}>Game Logic & Validation Case Study</div>
-          <h1>Where’s Waldo</h1>
-          <p className={styles.tagline}>
-            A high-integrity search game where the backend acts as the sole
-            "Source of Truth" for coordinate validation and state progression.
-          </p>
+      <button className={styles.back} onClick={() => navigate(-1)}>
+        <i className="ti ti-arrow-left" aria-hidden="true" />
+        All projects
+      </button>
 
-          <div className={styles.stack}>
-            {["React", "Node.js", "Express", "PostgreSQL", "Prisma"].map(
-              (tech) => (
-                <span key={tech} className={styles.techBadge}>
-                  {tech}
-                </span>
-              ),
-            )}
-          </div>
-        </div>
+      <div className={styles.badgeRow}>
+        <span className={`${styles.badge} ${styles.badgeAccent}`}>
+          Case study
+        </span>
+        <span className={styles.badge}>Game logic & validation</span>
+      </div>
 
-        <div className={styles.imageContainer}>
-          <img
-            src={waldoImage}
-            alt="Where's Waldo game interface"
-            className={styles.mainImage}
-          />
-        </div>
-      </section>
+      <h1 className={styles.title}>
+        Where’s Waldo — high
+        <br />
+        integrity photo search
+      </h1>
+      <p className={styles.subtitle}>
+        A secure photo-hunt application leveraging server-side validation,
+        relational progress tracking, and viewport-independent coordinate
+        normalization formulas. Built backend-first, shipped end to end.
+      </p>
 
-      <section className={styles.section}>
-        <h2>Objective</h2>
-        <p>
-          Build a game that relies on backend-controlled validation and
-          progression rather than trusting client-side logic, ensuring fair
-          gameplay and accurate results.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>System Flow</h2>
-
-        <ul>
-          <li>User selects a field (level)</li>
-          <li>If not authenticated → redirected to login</li>
-          <li>Game starts with first image and target characters</li>
-          <li>User clicks image → coordinates sent to backend</li>
-          <li>Backend validates guess and updates progress</li>
-          <li>When all characters are found → next image loads</li>
-          <li>When all images are completed → field marked complete</li>
-          <li>Final time is recorded and leaderboard updated</li>
-        </ul>
-
-        <p>
-          The backend manages progression state and determines advancement,
-          preventing the client from bypassing game logic.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Progression System</h2>
-
-        <ul>
-          <li>Each field contains multiple images</li>
-          <li>User progress is tracked per field</li>
-          <li>Completion state is stored in the database</li>
-          <li>Users must complete images sequentially</li>
-        </ul>
-
-        <p>
-          The system treats progression as backend-managed state, ensuring
-          consistency across sessions and preventing skipped steps.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Data Model</h2>
-
-        <img
-          src={schema}
-          alt="Database schema diagram"
-          className={styles.schema}
-        />
-
-        <ul>
-          <li>Users → authenticated players</li>
-          <li>Fields → game levels</li>
-          <li>Images → belong to fields</li>
-          <li>Characters → store valid coordinates per image</li>
-          <li>Progress → tracks user completion per field</li>
-          <li>Leaderboard → stores completion time per user per field</li>
-        </ul>
-
-        <p>
-          Relationships ensure that validation, progression, and scoring are all
-          tied to the authenticated user and specific game field.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>API Design</h2>
-
-        <pre className={styles.code}>
-          {`POST /guess
-GET /image/:id
-GET /progress/:fieldId
-POST /complete
-GET /leaderboard/:fieldId`}
-        </pre>
-
-        <p>
-          The API validates user actions and controls progression, ensuring that
-          all game logic remains on the server.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Validation & Integrity</h2>
-
-        <ul>
-          <li>All guesses validated on the server</li>
-          <li>No character coordinates exposed to client</li>
-          <li>Progress controlled by backend state</li>
-          <li>Leaderboard submissions verified server-side</li>
-        </ul>
-
-        <p>
-          The backend acts as the source of truth — the frontend only sends
-          input, never determines results.
-        </p>
-      </section>
-
-      <section className={styles.section}>
-        <h2>Key Challenge</h2>
-
-        <p>
-          The main challenge was handling coordinate accuracy across different
-          screen sizes. This required normalizing click positions relative to
-          image dimensions before validating them against stored character
-          coordinates.
-        </p>
-      </section>
-
-      <section className={styles.links}>
-        <a
-          href="https://github.com/mansuur-iman/wheres-waldo-fullstack"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Source Code ↗
-        </a>
+      <div className={styles.ctaRow}>
         <a
           href="https://wheres-waldo-fullstack.vercel.app/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          className={`${styles.btn} ${styles.btnPrimary}`}
         >
-          Live Demo →
+          <i className="ti ti-player-play" aria-hidden="true" />
+          Live demo
         </a>
-      </section>
+        <a
+          href="https://github.com/mansuur-iman/wheres-waldo-fullstack"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.btn} ${styles.btnSecondary}`}
+        >
+          <i className="ti ti-brand-github" aria-hidden="true" />
+          Source code
+        </a>
+      </div>
+
+      <div className={styles.stackRow}>
+        {[
+          "React",
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "Prisma ORM",
+          "REST API",
+        ].map((t) => (
+          <span key={t} className={styles.tech}>
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <div className={styles.imageFrame}>
+        <img
+          src={waldoImage}
+          alt="Where's Waldo game interface"
+          className={styles.mainImage}
+        />
+      </div>
+
+      <hr className={styles.divider} />
+
+      <div className={styles.statsGrid}>
+        <div className={styles.statCard}>
+          <p className={styles.statLabel}>Objective</p>
+          <p className={styles.statValue}>Backend validation</p>
+        </div>
+        <div className={styles.statCard}>
+          <p className={styles.statLabel}>Core challenge</p>
+          <p className={styles.statValue}>Scale normalization</p>
+        </div>
+        <div className={styles.statCard}>
+          <p className={styles.statLabel}>Database</p>
+          <p className={styles.statValue}>PostgreSQL</p>
+        </div>
+      </div>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>What it does</h2>
+      <p className={styles.body}>
+        Players browse maps, select targets, and click to reveal hidden
+        components. Instead of trusting the client-side system with spatial
+        values, the frontend maps coordinates into relative percentages and
+        sends them to the REST API layer, where precise validations, state
+        tracking, and stopwatch markers are kept isolated and un-tamperable.
+      </p>
+
+      <div className={styles.featuresGrid}>
+        {features.map((f) => (
+          <div key={f.title} className={styles.featureCard}>
+            <i
+              className={`ti ${f.icon} ${styles.featureIcon}`}
+              aria-hidden="true"
+            />
+            <p className={styles.featureTitle}>{f.title}</p>
+            <p className={styles.featureDesc}>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>Request flow</h2>
+      <div className={styles.flow}>
+        {flowSteps.map((step, i) => (
+          <div key={step.label} className={styles.flowInner}>
+            <div className={styles.flowStep}>
+              <i className={`ti ${step.icon}`} aria-hidden="true" />
+              {step.label}
+            </div>
+            {i < flowSteps.length - 1 && (
+              <span className={styles.flowArrow}>→</span>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>API design</h2>
+      <pre className={styles.code}>
+        <code>
+          {[
+            ["POST", "/guess", "private — validate coordinates & progress"],
+            ["GET", "/image/:id", "public — load assets metadata"],
+            ["GET", "/progress/:id", "private — fetch active level status"],
+            ["POST", "/complete", "private — seal timer & record score"],
+            ["GET", "/leaderboard/:id", "public — get field score ranks"],
+          ].map(([method, route, comment]) => (
+            <span key={route + method}>
+              <span className={styles.codeMethod}>{method.padEnd(7)}</span>
+              <span className={styles.codeRoute}>{route.padEnd(16)}</span>
+              <span className={styles.codeComment}>{"// " + comment}</span>
+              {"\n"}
+            </span>
+          ))}
+        </code>
+      </pre>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>Data model</h2>
+      <div className={styles.schemaFrame}>
+        <img
+          src={schema}
+          alt="Database schema diagram"
+          className={styles.schemaImg}
+        />
+      </div>
+      <p className={styles.schemaCaption}>
+        Relational structure linking users, levels, image scales, and valid
+        target coordinates safely under system constraints
+      </p>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>Key challenge</h2>
+      <p className={styles.body}>
+        Managing accurate coordinates across unpredictable screen aspect ratios
+        required calculating dynamic, viewport-agnostic percentage values on
+        click vectors. This ensured coordinate mappings remained mathematically
+        sound on server matches whether played on compact cellular devices or
+        expansive 4K monitors.
+      </p>
+
+      <hr className={styles.divider} />
+
+      <h2 className={styles.sectionLabel}>What I learned building this</h2>
+      <ul className={styles.lessons}>
+        {lessons.map((l, i) => (
+          <li key={i} className={styles.lessonItem}>
+            <i className="ti ti-check" aria-hidden="true" />
+            {l}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
