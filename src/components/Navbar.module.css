@@ -68,7 +68,29 @@
 
 @media (max-width: 640px) {
   .floatingNav {
-    width: 78%;
-    top: 10px;
+    width: 82%;
+    padding: 6px 10px;
+    gap: 4px;
+  }
+
+  .navLeft {
+    gap: 6px;
+  }
+
+  .profilePic {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brandName {
+    font-size: 0.8rem;
+  }
+
+  .navLinks {
+    gap: 8px;
+  }
+
+  .navLinks a {
+    font-size: 0.78rem;
   }
 }
